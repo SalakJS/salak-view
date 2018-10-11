@@ -1,27 +1,27 @@
 const { Controller } = require('salak')
 
 class Index extends Controller {
-  async actionView () {
-    await this.view('home', {
+  async actionRender () {
+    await this.render('home', {
       title: 'View'
     })
   }
 
-  async actionRender () {
-    const html = await this.render('home', {
+  async actionRenderView () {
+    const html = await this.renderView('home', {
       title: 'Render'
     })
     return html
   }
 
-  async actionCtxView () {
-    await this.ctx.view('ctx', {
+  async actionCtxRender () {
+    await this.ctx.render('ctx', {
       title: 'View'
     })
   }
 
-  async actionCtxRender () {
-    const html = await this.ctx.render('ctx', {
+  async actionCtxRenderView () {
+    const html = await this.ctx.renderView('ctx', {
       title: 'Render'
     })
 
@@ -29,11 +29,11 @@ class Index extends Controller {
   }
 
   async actionHtml () {
-    await this.view('hello.html')
+    await this.render('hello.html')
   }
 
   async actionSubFile () {
-    await this.view('blog', {
+    await this.render('blog', {
       title: 'Post'
     })
   }

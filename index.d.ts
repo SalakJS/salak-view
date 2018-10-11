@@ -13,12 +13,12 @@ declare module 'salak' {
   }
 
   interface Controller {
-    render (relPath: string, locals?: any, module?: string): Promise<string>
-    view (relPath: string, locals?: any, module?: string): Promise<void>
+    renderView (relPath: string, locals?: any, module?: string): Promise<string>
+    render (relPath: string, locals?: any, module?: string): Promise<void>
   }
 
   interface Context {
-    render (relPath: string, locals?: any, module?: string): Promise<string>
-    view (relPath: string, locals?: any, module?: string): Promise<void>
+    renderView (relPath: string, locals?: any, module?: string): Promise<string>
+    render (relPath: string, locals?: any, module?: string): Promise<void>
   }
 }

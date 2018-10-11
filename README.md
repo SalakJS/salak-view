@@ -67,7 +67,7 @@ const { Controller } = require('salak')
 
 class Login extends Controller {
   async actionIndex () {
-    await this.view('login')
+    await this.render('login')
   }
 }
 
@@ -85,7 +85,7 @@ module.exports = Login
 - map {Object} map a file extension to an engine, like `{ html: 'ejs' }`, default `null`
 - config {Object} pass to view engine, default `{}`
 
-### Controller.prototype.view(viewName, locals, module)
+### Controller.prototype.render(viewName, locals, module)
 
 The function which register on or
 
@@ -95,15 +95,15 @@ The function which register on or
 
 @return will set view html to response.body
 
-`context.view()`, but `module` default `app.root`
+`context.render()`, but `module` default `app.root`
 
-### Controller.prototype.render(viewName, locals, module)
+### Controller.prototype.renderView(viewName, locals, module)
 
-params is the same as Controller.prototype.view
+params is the same as Controller.prototype.renderView
 
 @return complied html string，if file `ext` is `html` and `!options.engine && !map`, will return fs.createReadStrem(file)
 
-`context.render()`, but `module` default `app.root`
+`context.renderView()`, but `module` default `app.root`
 
 ## License
 
